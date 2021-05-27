@@ -63,9 +63,39 @@ namespace UntitledTrojan.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
         /// </summary>
-        public static System.IO.UnmanagedMemoryStream hardbass {
+        public static System.IO.UnmanagedMemoryStream amogus {
             get {
-                return ResourceManager.GetStream("hardbass", resourceCulture);
+                return ResourceManager.GetStream("amogus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap among {
+            get {
+                object obj = ResourceManager.GetObject("among", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] boot {
+            get {
+                object obj = ResourceManager.GetObject("boot", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] UntitledTrojan_CPP {
+            get {
+                object obj = ResourceManager.GetObject("UntitledTrojan_CPP", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }
