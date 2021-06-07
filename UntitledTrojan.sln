@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UntitledTrojan2", "UntitledTrojan2\UntitledTrojan2.csproj", "{FF273227-F828-4DDF-886E-8560C5BFC05A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UntitledTrojan2", "UntitledTrojan2\UntitledTrojan2.csproj", "{FF273227-F828-4DDF-886E-8560C5BFC05A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uranus", "Uranus\Uranus.csproj", "{4EE277BA-A99C-465F-8468-EB71CD1D37ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,18 @@ Global
 		{FF273227-F828-4DDF-886E-8560C5BFC05A}.Release|x64.Build.0 = Release|Any CPU
 		{FF273227-F828-4DDF-886E-8560C5BFC05A}.Release|x86.ActiveCfg = Release|Any CPU
 		{FF273227-F828-4DDF-886E-8560C5BFC05A}.Release|x86.Build.0 = Release|Any CPU
+		{4EE277BA-A99C-465F-8468-EB71CD1D37ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EE277BA-A99C-465F-8468-EB71CD1D37ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EE277BA-A99C-465F-8468-EB71CD1D37ED}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4EE277BA-A99C-465F-8468-EB71CD1D37ED}.Debug|x64.Build.0 = Debug|Any CPU
+		{4EE277BA-A99C-465F-8468-EB71CD1D37ED}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4EE277BA-A99C-465F-8468-EB71CD1D37ED}.Debug|x86.Build.0 = Debug|Any CPU
+		{4EE277BA-A99C-465F-8468-EB71CD1D37ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EE277BA-A99C-465F-8468-EB71CD1D37ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EE277BA-A99C-465F-8468-EB71CD1D37ED}.Release|x64.ActiveCfg = Release|Any CPU
+		{4EE277BA-A99C-465F-8468-EB71CD1D37ED}.Release|x64.Build.0 = Release|Any CPU
+		{4EE277BA-A99C-465F-8468-EB71CD1D37ED}.Release|x86.ActiveCfg = Release|Any CPU
+		{4EE277BA-A99C-465F-8468-EB71CD1D37ED}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
