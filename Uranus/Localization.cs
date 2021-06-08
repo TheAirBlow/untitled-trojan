@@ -8,28 +8,34 @@ namespace Uranus
 {
     public static class Localization
     {
+        //https://github.com/realuntitledstudio/untitled-trojan
+
         public static List<string> english = new List<string>() {
-            "Destroy your OS as 1, 2, 3!",
+            "Self-made trojan manager",
             "Photosensive epilepsy warning!\nThere are many flashing shit!\nType '1' if you agree.",
             "Goodbye! See you next time.",
             "Welcome! Select an option:",
-            "3) Exit",
-            "Are you sure about that?\nThis will erase MBR\nAnd destroy the OS.\nType 'destroy' if you agree.",
-            "Are you sure about that?\nThis payload is safe, but\nit is still harmful for your\neyes and your OS.\nType 'harm' if you agree.",
+            "#) Exit",
             "Unknown option!",
-            "Loading"
+            "Loading",
+            "Please update Project Uranus",
+            "From official Github page",
+            "Downloading...",
+            "Do you want enable notifier?\nIt will notify you about new trojans.\nPress '1' if you agree.\nPress Enter if you not."
         };
 
         public static List<string> russian = new List<string>() {
-            "Уничтожь ОС как 1, 2, 3!",
+            "Менеджер самописных троянов",
             "Фотосенситивная эпилепсия!\nЗдесь много мигающего дерьма!\nНапиши '1' если ты согласен.",
             "Пока! Увидемся позже.",
             "Здарова! Выбери опцию:",
-            "3) Выйти",
-            "Ты точно согласен?\nThis will erase MBR\nAnd destroy the OS.\nType 'destroy' if you agree.",
-            "Ты точно согласен?\nThis payload is safe, but\nit is still harmful for your\neyes and your OS.\nType 'harm' if you agree.",
-            "Unknown option!",
-            "Loading"
+            "#) Выйти",
+            "Неизвестная опция!",
+            "Загрузка",
+            "Пожалуйста, обновите Project Uranus",
+            "С официальной Github страницы",
+            "Скачивание...",
+            "Вы хотите включить уведомитель?\nОн скажет вам про новые трояны.\nНажми '1' если ты согласен.\nНажми Enter если нет."
         };
     }
 }

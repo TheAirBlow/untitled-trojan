@@ -19,16 +19,16 @@ namespace Uranus
             Console.WriteLine();
             for (int i = 0; i < count; i++)
             {
-                Console.Write("Loading. |");
+                Console.Write($"{Program.GetStr(6)}. |");
                 Console.CursorLeft = 0;
                 await Task.Delay(100);
-                Console.Write("Loading. /");
+                Console.Write($"{Program.GetStr(6)}. /");
                 Console.CursorLeft = 0;
                 await Task.Delay(100);
-                Console.Write("Loading. -");
+                Console.Write($"{Program.GetStr(6)}. -");
                 Console.CursorLeft = 0;
                 await Task.Delay(100);
-                Console.Write("Loading. \\");
+                Console.Write($"{Program.GetStr(6)}. \\");
                 Console.CursorLeft = 0;
                 await Task.Delay(100);
             }
@@ -37,7 +37,7 @@ namespace Uranus
         public static async Task ClearLines(int count)
         {
             int top = Console.CursorTop;
-            for (int i = 0; i < count; i++) await WriteLine("                                  ");
+            for (int i = 0; i < count; i++) await WriteLine("                                     ");
             Console.CursorTop = top;
         }
     }
