@@ -58,6 +58,7 @@
   <ItemGroup>
     <Content Include="Files\Amogus.txt" />
     <Content Include="Files\LatestVersion.txt" />
+    <Content Include="Files\Morgenshtern.txt" />
     <Content Include="Files\Trojans.txt" />
   </ItemGroup>
   <ItemGroup>
