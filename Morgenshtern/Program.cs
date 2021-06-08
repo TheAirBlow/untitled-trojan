@@ -112,8 +112,7 @@ namespace Morgenshtern
                         // Safe payload
                         SystemSounds.Asterisk.Play();
                         ShowWindow(GetConsoleWindow(), 0);
-                        new PayloadsClass.LastMinutes().OnTick(100000);
-                        //await PayloadsManager.Start();
+                        await PayloadsManager.Start();
                     }
                     await Menu();
                     return;
